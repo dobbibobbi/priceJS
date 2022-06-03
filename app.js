@@ -29,6 +29,8 @@ bot.on('text', async ctx => {
     let coinPrice = await getCoinPrice(coinSymbol)
     if ( coinPrice != undefined){
         ctx.reply(`${ctx.message.text.toLowerCase()}: ${coinPrice}`)
+        setTimeout(() => ctx.deleteMessage(ctx.message.message_id), 10000)
+        setTimeout(() => ctx.deleteMessage(ctx.message.message_id+1), 10000)
     }
 })
 
